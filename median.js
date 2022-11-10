@@ -1,13 +1,12 @@
 const findMedian = (arr) => {
   // Sort an array
-  arr.sort()
+  const sortedArr = arr.sort((a, b) => {return a - b});
   // Find the median
-  const length = arr.length
-  let medianPos
-  length % 2 ? medianPos = (length - 1) / 2 : medianPos = length / 2
+  const length = sortedArr.length
+  let medianPos = (length - 1) / 2
 
-  console.log('Check =>', arr[medianPos])
-  return arr[medianPos]
+  console.log('Check =>', sortedArr[medianPos])
+  return sortedArr[medianPos]
 }
 
-findMedian([1,1,1,1,4,5,9,6,9,0,3])
+findMedian([1,2,3,4,5,6,7,8,9])
