@@ -75,11 +75,39 @@ class BinarySearchTree {
     return data
   }
 
+  // DFS traverses through one branch of the root of a Binary Tree before it goes on to the other.
+  // In PreOrder we go through the left branch first before the right branch
   DFSPreOrder() {
     let data = []
     function traverse(node) {
       data.push(node.value)
       if(node.left) traverse(node.left)
+      if(node.right) traverse(node.right)
+    }
+    traverse(this.root)
+    return data
+  }
+
+  // DFSPostOrder traverses through the tree in similar manner to PreOrder only that here the tail of the branches are added 
+  // recursively until each left and right branch of every node is added before the node itself up until the root.
+  DFSPostOrder() {
+    let data = []
+    function traverse(node) {
+      if(node.left) traverse(node.left)
+      if(node.right) traverse(node.right)
+      data.push(node.value)
+    }
+    traverse(this.root)
+    return data
+  }
+
+  // DFSInOrder traverses through the tree in a similar manner but here the elements are added to the queue as the left branch
+  // node becomes visited. If no children nodes, automatically add the node to the queue.
+  DFSInOrder() {
+    let data = []
+    function traverse(node) {
+      if(node.left) traverse(node.left)
+      data.push(node.value)
       if(node.right) traverse(node.right)
     }
     traverse(this.root)
@@ -96,4 +124,4 @@ tree.insert(3)
 tree.insert(8)
 tree.insert(20)
 
-console.log(tree.DFSPreOrder())
+console.log(tree.DFSPostOrder())
