@@ -56,14 +56,17 @@ class PriorityQueue {
 }
 
 
-const pq1 = new PriorityQueue()
-pq1.enqueue("Common cold", 5)
-pq1.enqueue("Labour", 0)
-pq1.enqueue("High fever", 2)
+// const pq1 = new PriorityQueue()
+// pq1.enqueue("Common cold", 5)
+// pq1.enqueue("Labour", 0)
+// pq1.enqueue("High fever", 2)
 
-console.log('PQ ->', pq1)
+// console.log('PQ ->', pq1)
 
-console.log('hERE ->', pq1.dequeue())
-console.log('hERE ->', pq1.dequeue())
-console.log('hERE ->', pq1.dequeue())
-console.log('hERE ->', pq1.dequeue())
+// console.log('hERE ->', pq1.dequeue())
+// console.log('hERE ->', pq1.dequeue())
+// console.log('hERE ->', pq1.dequeue())
+// console.log('hERE ->', pq1.dequeue())
+
+
+module.exports = PriorityQueue
